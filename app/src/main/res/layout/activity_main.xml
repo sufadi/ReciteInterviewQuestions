@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="24dp"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <!--后续根据是否有必要拓展，才修改为RecycleView-->
+    <Button
+        android:id="@+id/btn_recite_java"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="1. 背诵Java题"/>
+
+    <Button
+        android:id="@+id/btn_recite_android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="2. 背诵Android题"/>
+
+    <Button
+        android:id="@+id/btn_recite_algorithm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="3. 背诵算法题"/>
+
+    <Button
+        android:id="@+id/btn_recite_android_system"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="4. 背诵Android系统题"/>
+
+    <Button
+        android:id="@+id/btn_recite_regular_expression"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="5. 背诵正则表达式"/>
+
+</LinearLayout>
