@@ -1,4 +1,5 @@
 # 1. 软件名称：卡片式记忆面试题
+- Git下载地址：https://github.com/sufadi/ReciteInterviewQuestions
 # 2. 软件方案:
 思路:卡片记忆法
 交互:
@@ -22,7 +23,7 @@
 5. 正则表达式
 
 # 3. Git 提交
-## 3.1 
+## 3.1 仓库地址
 下载：git clone https://github.com/sufadi/ReciteInterviewQuestions.git
 
 ## 3.2 首次提交工程
@@ -38,3 +39,8 @@ git push -u origin main
 git add
 git commit -m "xxx"
 git push -u origin main
+
+## 3.4 报错
+remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.
+remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information.
+fatal: Authentication failed for 'https://github.com/sufadi/ReciteInterviewQuestions.git/'

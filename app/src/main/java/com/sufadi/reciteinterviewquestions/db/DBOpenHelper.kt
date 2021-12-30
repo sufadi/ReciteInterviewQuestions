@@ -26,7 +26,7 @@ import com.sufadi.reciteinterviewquestions.utils.Constans
  */
 class DBOpenHelper(context: Context?, dbName: String?, factory: CursorFactory?, version: Int) : SQLiteOpenHelper(context, dbName, factory, version) {
 
-    constructor(context: Context?) : this(context, DB_NAME, null, 1) {
+    constructor(context: Context?) : this(context, DB_NAME, null, 2) {
         mDataBaseContext = context as DataBaseContext
     }
 
@@ -103,6 +103,18 @@ class DBOpenHelper(context: Context?, dbName: String?, factory: CursorFactory?, 
         oldVersion: Int,
         newVersion: Int
     ) {
+        when(newVersion) {
+            2 -> {
+                val createTableRegularSqlite3 =
+                    """CREATE TABLE IF NOT EXISTS ${Constans.DB_TABLE_NAME_SQLITE3}(
+                                ${Constans.DB_KEY_ID} integer NOT NULL PRIMARY KEY AUTOINCREMENT,
+                                ${Constans.DB_KEY_QUESTION} text,
+                                ${Constans.DB_KEY_ANSWER} text,
+                                ${Constans.DB_KEY_SHOW_COUNT} integer,
+                                ${Constans.DB_KEY_RECITED_STATUS} integer);"""
+                db.execSQL(createTableRegularSqlite3)
+            }
+        }
     }
 
 
