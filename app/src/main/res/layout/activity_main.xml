@@ -44,5 +44,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="6. 记忆数据库语句"/>
-
+    <Button
+        android:id="@+id/btn_recite_power_consumption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="7. 记忆功耗知识点"/>
 </LinearLayout>

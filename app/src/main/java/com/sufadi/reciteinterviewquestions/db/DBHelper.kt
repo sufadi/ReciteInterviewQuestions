@@ -54,6 +54,8 @@ class DBHelper(val context: Context) {
             Constans.TYPE_ANDROID_SYSTEM -> Constans.DB_TABLE_NAME_ANDROID_SYSTEM
             Constans.TYPE_ANDROID -> Constans.DB_TABLE_NAME_ANDROID
             Constans.TYPE_REGULAR_EXPRESSION -> Constans.DB_TABLE_NAME_REGULAR_EXPRESSION
+            Constans.TYPE_REGULAR_SQLITE3 -> Constans.DB_TABLE_NAME_SQLITE3
+            Constans.TYPE_POWER_CONSUMPTION  -> Constans.DB_TABLE_NAME_POWER_CONSUMPTION
             else -> Constans.DB_TABLE_NAME_JAVA
         }
     }

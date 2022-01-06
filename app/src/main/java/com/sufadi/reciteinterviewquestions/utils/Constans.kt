@@ -13,6 +13,7 @@ object Constans {
     const val TYPE_ANDROID_SYSTEM = 3
     const val TYPE_REGULAR_EXPRESSION = 4
     const val TYPE_REGULAR_SQLITE3 = 5
+    const val TYPE_POWER_CONSUMPTION= 6
 
     const val DB_NAME = "ReciteData.db"
     // /storage/emulated/0/
@@ -26,6 +27,7 @@ object Constans {
     const val DB_TABLE_NAME_RECITE_ALGORITHM = "recite_algorithm"
     const val DB_TABLE_NAME_REGULAR_EXPRESSION = "regular_expression"
     const val DB_TABLE_NAME_SQLITE3 = "sqlite3"
+    const val DB_TABLE_NAME_POWER_CONSUMPTION = "power_consumption"
 
     const val DB_KEY_ID= "id"
     const val DB_KEY_QUESTION = "question"
