@@ -1,6 +1,7 @@
 package com.sufadi.reciteinterviewquestions
 
 import android.os.Bundle
+import android.text.method.ScrollingMovementMethod
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -44,18 +45,30 @@ class ReciteInterviewActivity : AppCompatActivity(), View.OnClickListener {
             updateUI()
         }
         Log.d(Constans.TAG, "getTableSize: $size")
+
+        tv_answer.movementMethod = ScrollingMovementMethod.getInstance()
+        tv_question.movementMethod = ScrollingMovementMethod.getInstance()
     }
 
     private fun initListeners() {
         tv_question.setOnClickListener(this)
         tv_answer.setOnClickListener(this)
+        del_btn.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
         when(v?.id) {
             R.id.tv_question -> nextQuestion()
             R.id.tv_answer -> showAnswer()
+            R.id.del_btn -> delQuestion()
         }
+    }
+
+    private fun delQuestion() {
+        Log.d(Constans.TAG, "delQuestion")
+        dbHelper.delTableItem(type, curIndex)
+        size = dbHelper.getTableSize(type)
+        nextQuestion()
     }
 
     private fun updateUI() {

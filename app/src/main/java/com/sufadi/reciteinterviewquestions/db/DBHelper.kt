@@ -78,12 +78,20 @@ class DBHelper(val context: Context) {
     /**
      * Android sqlite 采用execSQL和rawQuery方法完成数据的添删改查操作
      * https://blog.csdn.net/qq156036678/article/details/84483839
+     *
+     * 【土方法，不建议】获取指定行数的数据，可以使用 limit + moveToLast
+     *
+     * 先获取一个范围，例如从0条开始，偏移1条，得到1条数据，并使用moveToLast获取最后1条数据，得到获取第1行数据目的
+     * select * from java limit 0,1
+     *
+     * 先获取一个范围，例如从0条开始，偏移2条，得到2条数据，并使用moveToLast获取最后1条数据，得到获取第2行数据目的
+     * select * from java limit 0,2
      */
     fun getTableItem(type: Int, index: Int): ReciteInfo? {
         var result: ReciteInfo? = null
         val tableName = getTableName(type)
-        val cursor: Cursor? = dateBase?.rawQuery("select * from $tableName WHERE ${Constans.DB_KEY_ID}=?", arrayOf(index.toString())) ?: null
-        if (cursor!!.moveToNext()) {
+        val cursor: Cursor? = dateBase?.rawQuery("select * from $tableName limit 0, $index", null)
+        if (cursor!!.moveToLast()) {
             val id = cursor.getInt(cursor.getColumnIndex(Constans.DB_KEY_ID))
             val question = cursor.getString(cursor.getColumnIndex(Constans.DB_KEY_QUESTION))
             val answer = cursor.getString(cursor.getColumnIndex(Constans.DB_KEY_ANSWER))
@@ -92,5 +100,10 @@ class DBHelper(val context: Context) {
         }
         cursor.close()
         return result
+    }
+
+    fun delTableItem(type: Int, index: Int) {
+        val tableName = getTableName(type)
+        dateBase?.execSQL("delete from $tableName WHERE ${Constans.DB_KEY_ID}=${index}")
     }
 }
