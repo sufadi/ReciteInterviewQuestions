@@ -41,6 +41,8 @@ class MainActivity : AppCompatActivity() , OnClickListener {
         btn_recite_regular_expression.setOnClickListener(this)
         btn_recite_sqlite3.setOnClickListener(this)
         btn_recite_power_consumption.setOnClickListener(this)
+        btn_recite_performance.setOnClickListener(this)
+        btn_recite_design_pattern.setOnClickListener(this)
     }
 
     /**
@@ -59,6 +61,8 @@ class MainActivity : AppCompatActivity() , OnClickListener {
             R.id.btn_recite_regular_expression -> gotoReciteUI(Constans.TYPE_REGULAR_EXPRESSION, buttonView.text as String)
             R.id.btn_recite_sqlite3 -> gotoReciteUI(Constans.TYPE_REGULAR_SQLITE3, buttonView.text as String)
             R.id.btn_recite_power_consumption -> gotoReciteUI(Constans.TYPE_POWER_CONSUMPTION, buttonView.text as String)
+            R.id.btn_recite_performance -> gotoReciteUI(Constans.TYPE_PERFORMANCE, buttonView.text as String)
+            R.id.btn_recite_design_pattern -> gotoReciteUI(Constans.TYPE_DESIGN_PATTERN, buttonView.text as String)
         }
     }
 

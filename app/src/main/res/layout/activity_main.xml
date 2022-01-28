@@ -48,5 +48,15 @@
         android:id="@+id/btn_recite_power_consumption"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="7. 记忆功耗知识点"/>
+        android:text="7. 记忆功耗续航"/>
+    <Button
+        android:id="@+id/btn_recite_performance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="8. 记忆性能优化"/>
+    <Button
+        android:id="@+id/btn_recite_design_pattern"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="9. 记忆设计模式"/>
 </LinearLayout>

@@ -56,6 +56,8 @@ class DBHelper(val context: Context) {
             Constans.TYPE_REGULAR_EXPRESSION -> Constans.DB_TABLE_NAME_REGULAR_EXPRESSION
             Constans.TYPE_REGULAR_SQLITE3 -> Constans.DB_TABLE_NAME_SQLITE3
             Constans.TYPE_POWER_CONSUMPTION  -> Constans.DB_TABLE_NAME_POWER_CONSUMPTION
+            Constans.TYPE_DESIGN_PATTERN -> Constans.DB_TABLE_NAME_DESIGN_PATTERN
+            Constans.TYPE_PERFORMANCE -> Constans.DB_TABLE_NAME_PERFORMANCE
             else -> Constans.DB_TABLE_NAME_JAVA
         }
     }
@@ -105,5 +107,15 @@ class DBHelper(val context: Context) {
     fun delTableItem(type: Int, index: Int) {
         val tableName = getTableName(type)
         dateBase?.execSQL("delete from $tableName WHERE ${Constans.DB_KEY_ID}=${index}")
+    }
+
+    fun updateAnswerTableItem(type: Int, index: Int, new: String) {
+        val tableName = getTableName(type)
+        dateBase?.execSQL("update $tableName set ${Constans.DB_KEY_ANSWER}  = '$new' WHERE ${Constans.DB_KEY_ID}=${index}")
+    }
+
+    fun updateQuestionTableItem(type: Int, index: Int, new: String) {
+        val tableName = getTableName(type)
+        dateBase?.execSQL("update $tableName set ${Constans.DB_KEY_QUESTION}  = '$new' WHERE ${Constans.DB_KEY_ID}=${index}")
     }
 }
